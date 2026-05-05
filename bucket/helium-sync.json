@@ -19,9 +19,11 @@
     }
   },
   "post_install": [
-    "$install_dir = Join-Path (Split-Path $dir) $version",
-    "python -m venv \"$install_dir\\.venv\"",
-    "& \"$install_dir\\.venv\\Scripts\\python\" -m pip install --quiet -r \"$install_dir\\requirements.txt\""
+    "Write-Host 'Setting up Python environment...'",
+    "python -m venv \"$dir\\.venv\"",
+    "Write-Host 'Installing Python dependencies...'",
+    "& \"$dir\\.venv\\Scripts\\python\" -m pip install -q -r \"$dir\\requirements.txt\"",
+    "Write-Host 'helium-sync is ready.'"
   ],
   "env_set": {
     "HELIUM_SYNC_VERSION": "$version"
