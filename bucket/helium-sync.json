@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Bidirectional sync of Helium browser bookmarks + saved tab groups across Windows machines, using your own private git repo as the transport. CLI, no extension.",
   "homepage": "https://github.com/tinywifi/helium-sync-windows",
   "license": "MIT",
@@ -10,20 +10,18 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v0.2.0/helium-sync-windows-v0.2.0-amd64.zip",
-      "hash": "sha256:03c79d994e7d39ae2c4e5517fdd594d9c2cc57c4f5be3ac6a1bd8b945d99a65a"
+      "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v0.3.0/helium-sync-windows-v0.3.0-amd64.zip",
+      "hash": "sha256:de986d052d63eca191ba0c7f40633bc99943eeb9f520f36e4d36fb9a7a63a8d1"
     },
     "arm64": {
-      "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v0.2.0/helium-sync-windows-v0.2.0-arm64.zip",
-      "hash": "sha256:94d934792958d6293efdcbe5f6f914944938a84512df73d2f2fbcd54061082bd"
+      "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v0.3.0/helium-sync-windows-v0.3.0-arm64.zip",
+      "hash": "sha256:504f5972d72c9af09ad93e04448f9eb02f1be2e6b4c537776ed38ee953ef01dd"
     }
   },
   "post_install": [
-    "Write-Host 'Setting up Python environment...'",
-    "python -m venv \"$dir\\.venv\"",
-    "Write-Host 'Installing Python dependencies...'",
-    "& \"$dir\\.venv\\Scripts\\python\" -m pip install -q -r \"$dir\\requirements.txt\"",
-    "Write-Host 'helium-sync is ready.'"
+    "$install_dir = Join-Path (Split-Path $dir) $version",
+    "python -m venv \"$install_dir\\.venv\"",
+    "& \"$install_dir\\.venv\\Scripts\\python\" -m pip install --quiet -r \"$install_dir\\requirements.txt\""
   ],
   "env_set": {
     "HELIUM_SYNC_VERSION": "$version"
