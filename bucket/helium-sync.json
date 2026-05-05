@@ -6,11 +6,11 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v1.0.0/helium-sync-windows-v1.0.0-amd64.zip",
-      "hash": "sha256:def846d02bffc139b0df07a132378efe06c2c59803e4e52ae86db1b69a0d8b7f"
+      "hash": "sha256:24fbb389a773445e5254d0fc291585cbcc476e283ebc9324bc089193cd4567de"
     },
     "arm64": {
       "url": "https://github.com/tinywifi/helium-sync-windows/releases/download/v1.0.0/helium-sync-windows-v1.0.0-arm64.zip",
-      "hash": "sha256:53ee774d89f9c17b3f288fc66f102300ada5b7ba54f012ca984b6ec8049a3de3"
+      "hash": "sha256:686cf905fe148f2160928567cf8708773aaaf18697d73dcdb3ac4ce577154a5c"
     }
   },
   "env_set": {
